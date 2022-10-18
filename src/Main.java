@@ -1,13 +1,19 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         int[] arr=new int[30];
         for(int i=0;i<arr.length;i++){
             arr[i]=(int)(Math.random()*100_000 + 100_000);
-            System.out.print(arr[i]+" ");
+            }
+        int min, max = min = arr[0];
+
+        System.out.println(Arrays.toString(arr));
+
+        for (int i : arr) {
+            min = Math.min(min,i);
+            max = Math.max(max,i);
         }
-        System.out.println();
-        int total = 0;
-        for (int x : arr) total += x;
-        System.out.println("Сумма трат за месяц составила " + total +" рублей.");
+        System.out.println("Минимальная сумма трат за день составила " + min + " рублей. Максимальная сумма трат за день составила " + max + " рублей");
     }
 }
